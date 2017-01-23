@@ -1,6 +1,6 @@
-goal: to get closure of property set and function dependence according to algorithm in database class  
+goal: to calculate and display the closure of property set and function dependence according to algorithm in database class  
 
-1) to calculate closure of property set  
+1) Calculate and display the closure of property set  
 
 specific requirements:  
 1. User inputs function dependence and input ends in 'End'  
