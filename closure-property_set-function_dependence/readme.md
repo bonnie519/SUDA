@@ -1,15 +1,19 @@
-goal: to get closure of property set and function dependence according to algorithm in database class
+goal: to get closure of property set and function dependence according to algorithm in database class  
 
-1)to calculate closure of property set/n
-specific requirements:/n
-1.User inputs function dependence and input ends in 'End'/n
-2.The format of function dependence is like: AB->C, A->BE, etc.. To simplify, we assume that every property is denoted as capital letter from A to Z.
-3.After user finishes input of all function dependence, display a hint'please input property set to get closure' on screen./n
-We need to calculate the corresponding closure when user inputs 1 or more properties.
-e.g. when user inputs A, we show the value of 'A+'. when user inputs AB, we show the value of 'AB+'.
-repeat displaying a hint'please input property set to get closure' until user inputs 'END'
+1)to calculate closure of property set  
 
-2)based on the algorithm of calculating closure of property set above, calculate and display the closure of function dependence(denote as F+) user inputs
-/n
-command line interface
-language: C++
+specific requirements:  
+
+1.User inputs function dependence and input ends in 'End'  
+
+2.The format of function dependence is like: AB->C, A->BE, etc..  
+To simplify, we assume that every property is denoted as capital letter from A to Z.  
+
+3.After user finishes input of all function dependence, display a hint'please input property set to get closure' on screen.</br>
+We need to calculate the corresponding closure when user inputs 1 or more properties.</br>
+e.g. when user inputs A, we show the value of 'A+'. when user inputs AB, we show the value of 'AB+'.</br>
+repeat displaying a hint'please input property set to get closure' until user inputs 'END'</br>
+
+2)based on the algorithm of calculating closure of property set above, calculate and display the closure of function dependence(denote as F+) user inputs</br>
+command line interface</br>
+language: C++</br>
