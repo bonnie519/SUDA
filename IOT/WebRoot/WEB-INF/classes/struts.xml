@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+
+    <include file="example.xml"/>
+
+
+
+    <package name="default" namespace="/" extends="struts-default">
+        <default-action-ref name="index" />
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">HelloWorld</param>
+                <param name="namespace">/example</param>
+            </result>
+        </action>
+    </package>
+	 -->
+	 
+	
+	 <constant name="struts.i18n.encoding" value="GBK"/>
+	
+     <package name="login" namespace="/login" extends="struts-default">
+        
+        <action name="*_*" class="com.lm.action.UserLogin" method="{2}">
+            <result name="success">
+                /integrated_monitoring.jsp
+            </result>
+            <result name="error">
+                /user_login_fail.jsp
+            </result>  
+            <result name="register">
+                /user_register.jsp
+            </result>   
+        </action>
+     </package>
+     
+     
+     
+     <package name="monitor" namespace="/monitor" extends="struts-default">
+        
+        <action name="*_*" class="com.lm.action.EvtMonitor" method="{1}">
+            <result name="integrated">
+                /integrated_monitoring.jsp
+            </result>
+            <result name="temp">
+                /temp_monitoring.jsp
+            </result>  
+            <result name="humi">
+                /humi_monitoring.jsp
+            </result>   
+        </action>
+     </package>
+     
+     <package name="data" namespace="/data" extends="struts-default">
+        
+        <action name="*_*" class="com.lm.action.DataAnalyze" method="{2}">
+            <result name="clusternum">
+                /data_clusternum.jsp
+            </result>
+            <result name="nodebroken">
+                /data_nodebroken.jsp
+            </result>  
+            <result name="clusterstate">
+                /data_clusterstate.jsp
+            </result> 
+            <result name="baidumap">
+                /baidu_map.jsp
+            </result>  
+        </action>
+     </package>
+    
+    
+     <package name="register" namespace="/register" extends="struts-default">
+        
+        <action name="*_*" class="com.lm.user.User" method="{2}">
+            <result name="success">
+                /login.jsp
+            </result>
+            
+        </action>
+     </package>
+
+</struts>
