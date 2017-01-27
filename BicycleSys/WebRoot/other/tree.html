@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tree.jquery.js"></script>
+    <link rel="stylesheet" href="css/jqtree.css">
+    <script src="js/jquery.cookie.js"></script>
+<style>
+#tree1{width:17%;height:85%;margin:none;float:left;}
+#map{background-color:pink;width:80%;height:700px;margin:0 2% 0 1%;float:left;text-align:left;}
+</style>
+</head>
+<body>
+<div id="tree1"></div>
+<div id="map">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+</body>
+</html>
+<script type="text/javascript">
+    var data = [
+        {
+            label: '沧浪区',
+            children: [
+                { label: '苏大本部',
+                  children:[
+                      {label: '理工楼'}
+                  ]
+                },
+                { label: '人民公园' }
+            ]
+        },
+        {
+            label: '吴中区',
+            children: [
+                { label: '某某景区' }
+            ]
+        }
+    ];
+//create tree
+    $(function() {
+        $('#tree1').tree({
+            data: data
+        });
+    });
+//bind 'tree.click' event
+$('#tree1').bind(
+'tree.click',
+function(event){
+//The clicked node is 'event.node'
+var node = event.node;
+//$('#map').background-color=blue;
+
+alert(node.name);
+var map=document.getElementById('map');
+map.style.backgroundColor="blue";
+}
+);
+/*
+* $.getJSON(
+ '/some_url/',
+ function(data) {
+ $('#tree1').tree({
+ data: data
+ });
+ }
+ );*/
+</script>
